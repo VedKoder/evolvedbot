@@ -1,0 +1,37 @@
+name: stranger-music-bot
+
+services:
+  - name: bot
+    type: worker
+    git:
+      branch: main
+    build:
+      type: dockerfile
+      dockerfile: Dockerfile
+    run:
+      command: "python3 -m SHUKLAMUSIC"
+    env:
+      - key: API_ID
+        value: ""
+      - key: API_HASH
+        value: ""
+      - key: BOT_TOKEN
+        value: ""
+      - key: LOGGER_ID
+        value: ""
+      - key: MONGO_DB_URI
+        value: ""
+      - key: OWNER_ID
+        value: ""
+      - key: STRING_SESSION
+        value: ""
+      - key: STRING_SESSION2
+        value: ""
+      - key: STRING_SESSION3
+        value: ""
+      - key: STRING_SESSION4
+        value: ""
+      - key: STRING_SESSION5
+        value: ""
+    health_check:
+      type: tcp
